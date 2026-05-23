@@ -12,10 +12,12 @@ jobs:
         with:
           ndk-version: r21e
       - name: Build Mod
-        run: ndk-build
+        run: |
+          cd jni
+          ndk-build
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: mod-menu
-          path: libs/
+          path: jni/libs/
           
